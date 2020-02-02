@@ -25,6 +25,7 @@ public class WebServiceConfig {
 		return new ServletRegistrationBean<>(mds, "/ws/*");
 	}
 	
+	// /ws/courses.wsdl -> URL do wsdl
 	@Bean(name = "courses")
 	public DefaultWsdl11Definition wsdlDefinition(XsdSchema schema) {
 		DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
