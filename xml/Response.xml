@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCourseDetailsResponse xmlns="http://ioliveira.com/courses">
+	<CourseDetails>
+		<id>123</id>
+		<name>Spring-SOAP</name>
+		<description>The basics of SOAP webservices with spring-boot</description>
+	</CourseDetails>
+</GetCourseDetailsResponse>
