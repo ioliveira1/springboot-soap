@@ -17,7 +17,7 @@ public class CourseDetailsService {
 		Course c1 = Course.builder().id(1).name("Spring").description("10 steps").build();
 		Course c2 = Course.builder().id(2).name("Spring MVC").description("10 examples").build();
 		Course c3 = Course.builder().id(3).name("Spring Boot").description("6K students").build();
-		Course c4 = Course.builder().id(3).name("Maven").description("Most popular course").build();
+		Course c4 = Course.builder().id(4).name("Maven").description("Most popular course").build();
 		
 		courses.addAll(Arrays.asList(c1, c2, c3, c4));
 	}
