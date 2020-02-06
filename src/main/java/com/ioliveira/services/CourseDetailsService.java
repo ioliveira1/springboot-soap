@@ -11,7 +11,7 @@ import com.ioliveira.beans.Course;
 @Service
 public class CourseDetailsService {
 	
-	private static List<Course> courses = new ArrayList<>();
+	private static final List<Course> courses = new ArrayList<>();
 	
 	static {
 		Course c1 = Course.builder().id(1).name("Spring").description("10 steps").build();
@@ -23,12 +23,11 @@ public class CourseDetailsService {
 	}
 	
 	public Course findById(int id) {
-		Course course = courses
+		return courses
 				.stream()
 				.filter(c -> c.getId() == id)
 				.findFirst()
 				.orElseThrow(() -> new RuntimeException("Course id: " + id + " not found!"));
-		return course;
 	}
 	
 	public List<Course> findAll() {
