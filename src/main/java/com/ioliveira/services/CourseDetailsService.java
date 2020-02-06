@@ -33,15 +33,17 @@ public class CourseDetailsService {
 	public List<Course> findAll() {
 		return courses;
 	}
-	
-	public boolean deleteById(int id) {
+
+	public int deleteById(int id) {
 		try {
 			findById(id);
-			return courses.removeIf(c -> c.getId() == id);
+			if (courses.removeIf(c -> c.getId() == id)){
+				return 1;
+			}
 		} catch (Exception e) {
 			System.out.println("Erro ao deletar o curso!");
 		}
-		return false;
+		return 0;
 	}
 	
 }
