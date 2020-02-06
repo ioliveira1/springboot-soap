@@ -36,11 +36,12 @@ public class CourseDetailsEndpoint {
 
 	@PayloadRoot(namespace = "http://ioliveira.com/courses", localPart = "GetAllCourseDetailsRequest")
 	@ResponsePayload
-	public GetAllCourseDetailsResponse getAllCourses(@RequestPayload GetAllCourseDetailsRequest request){
+	public GetAllCourseDetailsResponse getAllCourses(){
 		GetAllCourseDetailsResponse response = new GetAllCourseDetailsResponse();
 		List<Course> courseList = courseDetailsService.findAll();
 
-		List<CourseDetails> courseDetailsList = courseList
+		List<CourseDetails> courseDetailsList =
+				courseList
 				.stream()
 				.map(EndpointUtils::convertToCourseDetails)
 				.collect(Collectors.toList());
