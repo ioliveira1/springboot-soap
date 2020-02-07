@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ioliveira.courses.Status;
 import org.springframework.stereotype.Service;
 
 import com.ioliveira.beans.Course;
@@ -34,16 +35,16 @@ public class CourseDetailsService {
 		return courses;
 	}
 
-	public int deleteById(int id) {
+	public Status deleteById(int id) {
 		try {
 			findById(id);
 			if (courses.removeIf(c -> c.getId() == id)){
-				return 1;
+				return Status.SUCCESS;
 			}
 		} catch (Exception e) {
 			System.out.println("Erro ao deletar o curso!");
 		}
-		return 0;
+		return Status.FAILURE;
 	}
 	
 }

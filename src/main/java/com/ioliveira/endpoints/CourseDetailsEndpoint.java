@@ -53,7 +53,7 @@ public class CourseDetailsEndpoint {
 
 	@PayloadRoot(namespace = "http://ioliveira.com/courses", localPart = "DeleteCourseDetailsRequest")
 	@ResponsePayload
-	public DeleteCourseDetailsResponse deletCourse (@RequestPayload DeleteCourseDetailsRequest request){
+	public DeleteCourseDetailsResponse deleteCourse (@RequestPayload DeleteCourseDetailsRequest request){
 		DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
 
 		response.setStatus(courseDetailsService.deleteById(request.getId()));
