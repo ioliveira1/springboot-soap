@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.ioliveira.courses.Status;
+import com.ioliveira.services.exceptions.CourseNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.ioliveira.beans.Course;
@@ -28,7 +29,7 @@ public class CourseDetailsService {
 				.stream()
 				.filter(c -> c.getId() == id)
 				.findFirst()
-				.orElseThrow(() -> new RuntimeException("Course id: " + id + " not found!"));
+				.orElseThrow(() -> new CourseNotFoundException("Course not found! ID: " + id));
 	}
 	
 	public List<Course> findAll() {
